@@ -4,6 +4,16 @@ Rails.application.routes.draw do
     root 'home#show'
 
     constraints format: 'html' do
+      scope '/tesco/sandy' do
+        resources :tesco_appointments, only: %i(new create), path: 'appointments' do
+          collection do
+            get :ineligible
+            get :confirmation
+            get :times
+          end
+        end
+      end
+
       resources :categories, only: 'show', path: 'browse'
 
       get '/book', to: redirect('/appointments', status: 302)

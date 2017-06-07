@@ -1,0 +1,21 @@
+<% content_for(:page_title, t('service.title', page_title: 'Book an appointment at Tesco')) %>
+<div class="l-grid-row">
+  <div class="l-column-full">
+    <h1>Book an appointment at Tesco Sandy Superstore</h1>
+  </div>
+
+  <%= form_for @appointment, as: :appointment, html: { id: "form_appointment_step_#{@appointment.step}" } do |f| %>
+    <%= f.hidden_field(:step, id: 'hidden_appointment_step') %>
+    <%= render "step_#{@appointment.step}", f: f %>
+
+    <% if @appointment.step == 1 %>
+      <div class="l-column-half l-column-half--right" data-slot-picker-single-time>
+        <%= render 'times_js' %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if @appointment.step == 1 || @appointment.step == 2 %>
+    <%= render 'day_picker' %>
+  <% end %>
+</div>

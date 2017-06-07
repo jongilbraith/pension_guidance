@@ -1,0 +1,26 @@
+<% content_for(:page_title, t('service.title', page_title: 'Confirmation')) %>
+
+<div class="l-grid-row">
+  <div class="l-column-two-thirds">
+    <div class="govuk-box-highlight">
+      <h1 class="bold-large govuk-box-highlight__header">We’ve booked your appointment</h1>
+      <p>
+        Your reference number is <br>
+        <strong class="heading-medium t-booking-reference"><%= @booking_reference %></strong>
+      </p>
+    </div>
+
+    <div class="t-start">
+      <p><strong>Date</strong><br><%= l(@booking_date, format: :govuk_date) %></p>
+      <p><strong>Time</strong><br><%= l(@booking_date, format: :govuk_time) %></p>
+    </div>
+
+    <h2>What happens next?</h2>
+
+    <p>We’ll email you to confirm these details. You’ll also receive information to help you prepare for your appointment.</p>
+
+    <p>To cancel or change your appointment, or if any of the information above isn’t correct, call <strong>0800 138 3944</strong>.</p>
+
+    <p><a href="https://research.pensionwise.gov.uk/s/onlinebookingtelephone/">Give us your feedback</a></p>
+  </div>
+</div>
