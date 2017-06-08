@@ -29,8 +29,8 @@
       $.post(
         this.$form.attr('action'),
         {
-          'telephone_appointment[step]': 2,
-          'telephone_appointment[selected_date]': date,
+          'appointment[step]': 2,
+          'appointment[selected_date]': date,
           'authenticity_token': this.$form.find('input[name=authenticity_token]').val()
         }
       )
