@@ -29,7 +29,7 @@ $('[data-slider]').each(function() {
 $('[data-slot-picker]').each(function() {
   'use strict';
   var $component = $(this);
-  $('#hidden_telephone_appointment_step').val(2);
+  $('#hidden_appointment_step').val(2);
   new PWPG.SlotPicker($component);
 });
 
