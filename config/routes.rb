@@ -39,6 +39,7 @@ Rails.application.routes.draw do
         get 'print'
       end
 
+      # rubocop:disable Style/MultilineIfModifier
       namespace :tesco, locale: :en do
         resources :locations, only: :index do
           resources :bookings, only: %i(new create) do
@@ -49,7 +50,7 @@ Rails.application.routes.draw do
             end
           end
         end
-      end
+      end unless Rails.env.production?
 
       resources :locations, only: [:index, :show] do
         member do
